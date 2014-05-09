@@ -1,4 +1,5 @@
 //this is the main JavaScript source for ThisIsChico
+//adding a random comment
 
 $('button.camera-control').click(function(){
 	// navigator is PhoneGap access to hardware
