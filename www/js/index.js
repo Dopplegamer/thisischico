@@ -15,11 +15,24 @@
  		};
  		
  		navigator.camera.getPicture(getPhoto, null, options);
+		navigator.getlocation.getCurrentPosition(getPosition, null, {enableHighAccuracy: true});
+		
  	}
+	
  });
  
  function getPhoto(data) {
  	
  	$('#camera-photo').attr('src', "data:image/jpeg;base64," + data);
  	
+ }
+ 
+ function getPosition(position){
+ 
+	var longitude = position.coords.longitude;
+	var latitude = position.coorde.latitude;
+	
+	$('#longitude').html('Long: ' + longitude);
+	$('#latitude').html('Lat: ' + latitude);
+ 
  }
