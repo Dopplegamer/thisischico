@@ -8,7 +8,9 @@ displayAllPhotos();
 $('#showall').show();
 
 function displayAllPhotos(){
-	//start here on tuesday may 20
+	for (var i=0, i<photos.length; i++){
+		$('#showall ul").append("<li>" + photos[i]["imagepath"] + "</li>");
+	}
 }
  
  function loadAllPhotos(){
@@ -47,6 +49,8 @@ function displayAllPhotos(){
  $('button.save').click(function(){
 	makePhotoEntry();
 	saveAllPhotos();
+	$('#showall ul').children().remove();
+	displayAllPhotos();
  });
  
  function hideAllViews() {
@@ -62,8 +66,35 @@ function displayAllPhotos(){
 	} else if ($(this).html() == "Capture"){
 		$('#camera').show();
 	} else {
+		populateEditView();
 		$('#edit').show();
 	}
+ });
+ 
+ function populateEditView(){
+	var photoToEdit = photos[WHICH_PHOTO_???];
+	
+	$('#camera-photo-edit').attr('src', photoToEdit['imageData']);
+	$('#image-path-dit').html(photoToEdit['imagepath']);
+	$('#longitude-edit').html(photoToEdit['longitude']);
+	$('#latitude-edit').html(photoToEdit['latitude']);
+	$('#description-edit').val(photoToEdit['description']);
+ }
+ 
+ $('#save-edit').click(function(){
+	var imageData = $('#camera-photo-edit').attr('src');
+	var imagepath = $('#image-path-edit').html();
+	var longitude = $('#longitude-edit').html();
+	var latitude = $('#latitude-edit').html();
+	var description = $('#description-edit').val();
+	
+	photos[WHICH_PHOTO_???]['imageData'] = imageData;
+	photos[WHICH_PHOTO_???]['imagepath'] = imagepath;
+	photos[WHICH_PHOTO_???]['longitude'] = longitude;
+	photos[WHICH_PHOTO_???]['latitude'] = latitude;
+	photos[WHICH_PHOTO_???]['description'] = description;
+	
+	saveAllPhotos();
  });
  
  $('button.camera-control').click(function(){
