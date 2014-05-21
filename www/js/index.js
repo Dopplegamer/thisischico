@@ -19,6 +19,7 @@ function displayAllPhotos(){
  
  function makePhotoEntry(){
 	//var imageData = $('#camera-photo').attr('src').replace("data:image/jpeg;base64,", "");
+	var imageData = $('#camera-photo').attr('src');
 	var imagepath = $('#image-path').html();
 	var longitude = $('#longitude').html().replace('Long: ', '');
 	var latitude = $('#latitude').html().replace('Long: ', '');
@@ -80,7 +81,7 @@ function displayAllPhotos(){
  	}
  });
  
- function getPhoto(data) {
+ function getPhoto(imageURI) {
  	$('#camera-photo').attr('src', imageURI);
 	window.resolveLocalFileSystemURI(imageURI, resolveOnSuccess, resolveOnError);
  }
