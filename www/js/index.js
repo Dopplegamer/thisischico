@@ -77,7 +77,6 @@ function displayAllPhotos(){
  		};
  		navigator.camera.getPicture(getPhoto, null, options);
 		navigator.geolocation.getCurrentPosition(getPosition, null, {enableHighAccuracy: true});
-		navigator.getlocation.getCurrentPosition(getPosition, null, {enableHighAccuracy: true});
  	}
  });
  
@@ -119,10 +118,4 @@ function displayAllPhotos(){
 	$('#latitude').html('Lat: ' + latitude); 
  }
 
- function getPosition(position){
-	var longitude = position.coords.longitude;
-	var latitude = position.coorde.latitude;
-	$('#longitude').html('Long: ' + longitude);
-	$('#latitude').html('Lat: ' + latitude);
- }
 
