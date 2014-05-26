@@ -1,69 +1,82 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <meta charset="utf-8">
         <title>This is Chico</title>
     </head>
     <body>
- 	     <h1>This Is Chico</h1>
-		 
-		 <ul>
-			<li class="viewlink">Home</li>
-			<li class="viewlink">Capture</li>
-			<li class="viewlink">Edit</li>
-		 </ul>
-		 
-		<!--view for viewing a list of all photos-->
-		<div id="showall">
-		Here are all of the pictures that have been taken:
+		<div id="wrapper">
+			<div id="navigation">
 			<ul>
+				<li class="viewlink">Home</li>
+				<li class="viewlink">Capture Photo</li>
+				<li class="viewlink">Edit</li>
 			</ul>
-		</div>
-		 
-		<!--view for capturing new pictures-->
-         <div id="camera">
-             <button class="camera-control">
-                 Capture Photo
-             </button>
-  
-             <div style="text-align:center;margin:20px;">
-                 <img id="camera-photo" src="" style="width:auto;height:120px;" />
-				 <span id="image-path"></span>
-			 </div>
-		 
-			<div id="longitude">Longitude: 0</div>
-			<div id="latitude">Latitude: 0</div>
-			
-			Description:
-			<textarea id="description" cols="50" rows="5"></textarea>
-			<button class="save">Save</button>
-			
-         </div>
-		 <!--view for editing old pictures-->
-		 <div id="edit">
-			Here is the place to edit the pictures.
-			<div style="text-align:center;margin:20px;">
-                 <img id="camera-photo-edit" src="" style="width:auto;height:120px;" />
-				 <span id="image-path-edit"></span>
-			 </div>
-		 
-			<div id="longitude-edit">Longitude: 0</div>
-			<div id="latitude-edit">Latitude: 0</div>
-			
-			Description:
-			<textarea id="description-edit" cols="50" rows="5"></textarea>
-			<button class="save-edit">Save</button>
-		 </div>
+			</div>
+			<!-- VIEW FOR SHOWING A LIST OF ALL PHOTOS -->
+			<div id="showall">
+				<ul>
+				</ul>
 
-         <!--<div id="pics-taken"></div>
-         <ul id="error-output" style="color: red"></ul>-->
-         
-         <script src="phonegap.js"></script>
-         <script src="js/modernizr.dev.min.js"></script>
-         <script src="js/jquery-1.11.0.min.js"></script>
-         <script src="js/index.js"></script>
- 		
-     </body>
- 	
- </html>
+				<div id="imagepath" style="text-align:center;margin:20px;">
+					<img class="fullview" id="camera-photo-view" src="" />
+					<span id="image-path-view"></span>
+				</div>
+				
+				Long: <span id="longitude-view"></span>
+				Lat: <span id="latitude-view"></span>
+				
+				Description:
+				<p id="description-view"></p>
+				
+				<span id="index-view" style="visibility: hidden"></span>
+			</div>
+			
+			<!-- VIEW FOR CAPTURING NEW PICTURES -->
+			<div id="camera">
+				<button class="camera-control">
+					Capture Photo
+				</button>
+	 
+				<div style="text-align:center;margin:20px;">
+					<img class="fullview" id="camera-photo" src="" style="width:auto;height:120px;" />
+					<span id="image-path"></span>
+				</div>
+				
+				Long: <span id="longitude"></span>
+				Lat: <span id="latitude"></span>
+				
+				Description:
+				<textarea id="description" placeholder="Enter a description here" cols="50" rows="5"></textarea>
+				
+				<button class="save">Save</button>
+			</div>
+			
+			<!-- VIEW FOR EDITING OLD PICTURES -->
+			<div id="edit">
+				<ul>
+				</ul>
+
+				<div style="text-align:center;margin:20px;">
+					<img class="fullview" id="camera-photo-edit" src="" />
+					<span id="image-path-edit" style="visibility: hidden"></span>
+				</div>
+				
+				Long: <input id="longitude-edit" value="" />
+				Lat: <input id="latitude-edit" value="" />
+				
+				Description:
+				<textarea name="description-edit" id="description-edit" cols="50" rows="5"></textarea>
+				
+				<span id="index-edit" style="visibility: hidden"></span>
+
+				<button class="save-edit">Save</button>
+			</div>
+		</div>
+        <script src="js/phonegap.js"></script>
+        <script src="js/modernizr.dev.min.js"></script>
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
