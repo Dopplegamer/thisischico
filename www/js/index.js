@@ -73,7 +73,7 @@ $('li.viewlink').click(function () {
 	if ($(this).html() == "Home") {
 		clearFullView();
 		$('#showall').show();
-	} else if ($(this).html() == "Capture Photo") {
+	} else if ($(this).html() == "Capture") {
 		$('#camera').show();
 	} else {
 		clearEditView();
