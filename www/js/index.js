@@ -1,4 +1,4 @@
-// This is the main JavaScript source for FiggleSnitch
+// This is the main JavaScript source for Brandon and Rachelle
 var photos = [];
 
 loadAllPhotos();
@@ -220,7 +220,7 @@ function resolveOnSuccess(entry){
     var now = new Date();
     var timestamp = now.getTime();
     var photoName = timestamp + ".jpg";
-    var photoFolder = "figgle_photos";
+    var photoFolder = "chico_photos";
 
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
     	function(fileSystem) {      
