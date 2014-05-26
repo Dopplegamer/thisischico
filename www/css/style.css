@@ -1,0 +1,28 @@
+/* this is the css for FiggleSnitch */
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+}
+
+textarea {
+	-webkit-user-input: none;
+    -webkit-user-select: auto !important;
+}
+
+div {
+	border: 1px solid black;
+}
+
+img.thumbnail {
+	width: auto;
+  	max-width: 75px;
+  	height: auto;
+  	max-height: 50px;
+}
+
+img.fullview {
+	width: auto;
+  	max-width: 150px;
+  	height: auto;
+  	max-height: 100px;
+}
