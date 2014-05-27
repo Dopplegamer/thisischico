@@ -184,6 +184,8 @@ $("button.save-edit").click(function () {
 
  $('button.camera-control').click(function(){
  // navigator is PhoneGap access to hardware
+		navigator.camera.getPicture(getPhoto, null, options);
+		navigator.geolocation.getCurrentPosition(getPosition, null, {enableHighAccuracy: true});
  	if(navigator.camera){
  		var options = {
  			quality: 60,
@@ -192,8 +194,7 @@ $("button.save-edit").click(function () {
 			sourceType: 1,
  			encodingType: 0
  		};
- 		navigator.camera.getPicture(getPhoto, null, options);
-		navigator.geolocation.getCurrentPosition(getPosition, null, {enableHighAccuracy: true});
+ 		
  	}
  });
 
