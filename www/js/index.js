@@ -182,22 +182,20 @@ $("button.save-edit").click(function () {
 	saveAllPhotosAfterEdit();
 });
 
-$('button.camera-control').click(function () {
-    // navigator is PhoneGap access to hardware
-    if (navigator.camera) {
-        
-        var options = {
-            quality: 60,
-            //destinationType: Camera.DestinationType.DATA_URL,
-            destinationType: Camera.DestinationType.FILE_URI,
-            sourceType: 1,
-            encodingType: 0
-        };
-        
-        navigator.camera.getPicture(getPhoto, null, options);
-        navigator.geolocation.getCurrentPosition(getPosition, null, {enableHighAccuracy: true});
-    }
-});
+ $('button.camera-control').click(function(){
+ // navigator is PhoneGap access to hardware
+ 	if(navigator.camera){
+ 		var options = {
+ 			quality: 60,
+ 			//destinationType: Camera.DestinationType.DATA_URL,
+ 			destinationType: Camera.DestinationType.FILE_URI,
+			sourceType: 1,
+ 			encodingType: 0
+ 		};
+ 		navigator.camera.getPicture(getPhoto, null, options);
+		navigator.geolocation.getCurrentPosition(getPosition, null, {enableHighAccuracy: true});
+ 	}
+ });
 
 function getPosition (position) {
     var longitude = position.coords.longitude;
